@@ -13,6 +13,8 @@ const SignUp = () => {
     gender: "",
   });
 
+  const {loading,signup} =useSignup()
+
   const handleCheckboxChange = (gender) => {
     setInputs({ ...inputs, gender });
   };
