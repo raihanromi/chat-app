@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
+const cors = require("cors")
 
 const connectToMongDB = require("./db/connectToMongoDB");
 const authRoutes = require("./routes/auth.routes");
@@ -18,6 +19,7 @@ dotenv.config();
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors())
 
 app.use("/api/auth", authRoutes);
 app.use("/api/message", messageRoutes);
