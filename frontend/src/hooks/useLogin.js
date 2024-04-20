@@ -8,6 +8,7 @@ const useLogin = () => {
 
   const login = async (username, password) => {
     const success = handleInputErrors(username, password);
+
     if (!success) return;
 
     setLoading(true);
@@ -19,6 +20,7 @@ const useLogin = () => {
         body: JSON.stringify({ username, password }),
       });
       const data = await res.json();
+
       if (data.error) {
         throw new Error(data.error);
       }
@@ -40,6 +42,7 @@ function handleInputErrors(username, password) {
     toast.error("Please fill in all fields");
     return false;
   }
+  return true;
 }
 
 export default useLogin;
