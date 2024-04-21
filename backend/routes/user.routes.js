@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const getUsersForSidebar = require("../controllers/user.controller")
-const protectRoute  =require("../middleware/protectRoute")
+const protectRoute = require("../middleware/protectRoute")
 
 router.get("/",protectRoute,getUsersForSidebar)
 
