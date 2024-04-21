@@ -7,10 +7,9 @@ import { TiMessages } from "react-icons/ti";
 
 const MessageContainer = () => {
   const { selectedConversation, setSelectedConversation } = useConversation();
-  
   useEffect(() => {
-    return () => selectedConversation(null);
-  }, []);
+    return () => setSelectedConversation(null);
+  }, [setSelectedConversation]);
 
   return (
     <div className="md:min-w-[450px] flex flex-col">
